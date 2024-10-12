@@ -1,0 +1,20 @@
+groups:
+- name: example-alerts
+  rules:
+  - alert: HighCPUUsage
+    expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100) > 80
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Uso alto de CPU en {{ $labels.instance }}"
+      description: "La CPU ha estado por encima del 80% durante más de 1 minuto."
+
+  - alert: InstanceDown
+    expr: up == 0
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Instancia {{ $labels.instance }} está caída"
+      description: "La instancia {{ $labels.instance }} no está disponible por más de 5 minutos."
