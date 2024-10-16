@@ -1,0 +1,17 @@
+{
+	"ulid": "01J9C2EQ79SX2TA27QA21626AH",
+	"minTime": 1727978411604,
+	"maxTime": 1727985600000,
+	"stats": {
+		"numSamples": 30578,
+		"numSeries": 787,
+		"numChunks": 787
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01J9C2EQ79SX2TA27QA21626AH"
+		]
+	},
+	"version": 1
+}
